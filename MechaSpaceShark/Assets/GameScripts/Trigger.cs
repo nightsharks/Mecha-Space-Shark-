@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
 
+    public static bool CollideWithRock = false;
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Apple"))
@@ -16,6 +18,7 @@ public class Trigger : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             Debug.Log("rock");
+            CollideWithRock = true;
         }
     }
 }

@@ -16,10 +16,10 @@ public class playerController : MonoBehaviour {
         transform.Translate(y, x, 0);
     }
 
- 
-
     public void scoreText()
     {
         displayScore.text = "Score: " + scoreCount.ToString();
     }
+
+   
 }
