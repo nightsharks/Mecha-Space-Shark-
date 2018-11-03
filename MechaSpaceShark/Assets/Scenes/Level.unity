@@ -344,11 +344,11 @@ GameObject:
   m_Component:
   - component: {fileID: 297338853}
   - component: {fileID: 297338854}
-  - component: {fileID: 297338855}
   - component: {fileID: 297338857}
+  - component: {fileID: 297338855}
   m_Layer: 0
   m_Name: FoodPlaceholder
-  m_TagString: 'Consumable '
+  m_TagString: Apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 969134866}
   - component: {fileID: 969134868}
   - component: {fileID: 969134869}
+  - component: {fileID: 969134870}
   m_Layer: 0
   m_Name: SharkSpritePlaceholder
   m_TagString: Player
@@ -656,7 +657,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &969134869
 PolygonCollider2D:
@@ -757,6 +758,17 @@ PolygonCollider2D:
       - {x: -0.78, y: -0.28}
       - {x: -0.65, y: -0.22}
       - {x: -0.57, y: -0.24}
+--- !u!114 &969134870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969134865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5a3bc58a0851d478f270dae6e23001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1067883311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1128,7 @@ GameObject:
   - component: {fileID: 1850370424}
   m_Layer: 0
   m_Name: Food
-  m_TagString: 'Consumable '
+  m_TagString: Apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

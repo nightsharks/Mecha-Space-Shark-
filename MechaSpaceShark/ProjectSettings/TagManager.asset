@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - Pickup
   - 'Consumable '
+  - Apple
   layers:
   - Default
   - TransparentFX
