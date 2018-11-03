@@ -10,10 +10,10 @@ public class playerController : MonoBehaviour {
 
     void Update()
     {
-        var x = Input.GetAxis("Vertical") * Time.deltaTime * 200.0f;
-        var y = Time.deltaTime * 300.0f;
+        var y = Input.GetAxis("Vertical") * Time.deltaTime * 200.0f;
+        var x = Time.deltaTime * 300.0f;
 
-        transform.Translate(y, x, 0);
+        transform.Translate(x, y, 0);
     }
 
     public void scoreText()
@@ -21,5 +21,4 @@ public class playerController : MonoBehaviour {
         displayScore.text = "Score: " + scoreCount.ToString();
     }
 
-   
 }

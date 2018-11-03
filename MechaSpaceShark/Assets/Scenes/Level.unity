@@ -229,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26252468}
   - component: {fileID: 26252469}
+  - component: {fileID: 26252470}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Player
@@ -264,6 +265,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreCount: 0
   displayScore: {fileID: 0}
+--- !u!114 &26252470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 26252467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d26d7809f69d414b928f91e578aacae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fire: {fileID: 1219529406047852, guid: a250e9f2e1b8e41459cd9f466a6fd192, type: 2}
+  FireSpawn: {fileID: 969134867}
 --- !u!1 &65011483
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &861969867
 MonoBehaviour:
   m_ObjectHideFlags: 0
