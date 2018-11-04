@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectA: {fileID: 1459794724}
   objectB: {fileID: 969134867}
-  UIText: {fileID: 0}
+  UIText: {fileID: 1232654713}
 --- !u!224 &1459794724
 RectTransform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Distance : MonoBehaviour
 {
-
     public Transform objectA;
     public Transform objectB;
     public Text UIText;
@@ -17,7 +16,7 @@ public class Distance : MonoBehaviour
     }
     public void LateUpdate()
     {
-        UIText.text = "Distance Traveled: " + Vector3.Distance(objectA.position, objectB.position).ToString();
+        UIText.text = "Distance Traveled: " + Vector3.Distance(objectA.position, objectB.position).ToString("F0");
 
         otherUIText = UIText.ToString();
     }
