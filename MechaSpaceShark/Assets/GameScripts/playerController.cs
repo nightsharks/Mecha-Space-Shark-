@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class playerController : MonoBehaviour {
 
-    private int scoreCount;
+    public int scoreCount;
     public Text displayScore;
+    public static int finalScore = 0;
 
     void Start()
     {
@@ -26,11 +27,22 @@ public class playerController : MonoBehaviour {
             scoreCount++;
             scoreText();
         }
+
+        if(Trigger.CollideWithRock)
+        {
+            finalScore = scoreCount;
+            deleteScore();
+        }
     }
 
     public void scoreText()
     {
         displayScore.text = "Score: " + scoreCount.ToString();
+    }
+
+    public void deleteScore()
+    {
+        displayScore.text = "";
     }
 
 }

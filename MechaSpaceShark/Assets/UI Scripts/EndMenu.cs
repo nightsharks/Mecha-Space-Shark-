@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndMenu : MonoBehaviour
 {
     public GameObject EndMenuUI;
+    public Text FinalScore;
 
     public void Start()
     {
@@ -18,6 +20,7 @@ public class EndMenu : MonoBehaviour
         {
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
+            FinalScore.text = "Final Score: " + playerController.finalScore.ToString() ;
         }
 
     }
