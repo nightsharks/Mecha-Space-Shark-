@@ -19,8 +19,6 @@ public class Firebreathing : MonoBehaviour {
     {
         var flame = (GameObject)Instantiate (Fire, FireSpawn.position, FireSpawn.rotation);
 
-        flame.GetComponent<Rigidbody>().velocity = flame.transform.forward * 300;
-
-        Destroy(flame, 1.0f);
+        Destroy(flame, .5f);
     }
 }

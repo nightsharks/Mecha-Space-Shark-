@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trigger : MonoBehaviour {
 
     public static bool CollideWithRock = false;
+    public static bool CollideWithFood = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,6 +13,7 @@ public class Trigger : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             Debug.Log("apple");
+            CollideWithFood = true;
         }
 
         else if (other.gameObject.CompareTag("Obstacle"))
@@ -20,5 +22,11 @@ public class Trigger : MonoBehaviour {
             Debug.Log("rock");
             CollideWithRock = true;
         }
+    }
+
+
+    void Update()
+    {
+        CollideWithFood = false;
     }
 }
