@@ -7,6 +7,7 @@ public class EndMenu : MonoBehaviour
 {
     public GameObject EndMenuUI;
     public Text FinalScore;
+    public Text DistanceTravelled;
 
     public void Start()
     {
@@ -21,6 +22,7 @@ public class EndMenu : MonoBehaviour
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
             FinalScore.text = "Final Score: " + playerController.finalScore.ToString() ;
+            DistanceTravelled.text = Distance.otherUIText;
         }
 
     }
