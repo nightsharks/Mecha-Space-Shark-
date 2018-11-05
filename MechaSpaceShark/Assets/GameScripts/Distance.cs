@@ -8,7 +8,8 @@ public class Distance : MonoBehaviour
     public Transform objectA;
     public Transform objectB;
     public Text UIText;
-    public static string otherUIText = "";
+    public static string otherUIText = "test";
+    public float distanceNumber;
 
     private void Start()
     {
@@ -16,8 +17,10 @@ public class Distance : MonoBehaviour
     }
     public void LateUpdate()
     {
-        UIText.text = "Distance Traveled: " + Vector3.Distance(objectA.position, objectB.position).ToString("F0");
+        distanceNumber = Vector3.Distance(objectA.position, objectB.position);
 
-        otherUIText = UIText.ToString();
+        UIText.text = "Distance Traveled: " + distanceNumber.ToString("F0");
+
+        otherUIText = "Final Distance: " + distanceNumber.ToString("F0");
     }
 }

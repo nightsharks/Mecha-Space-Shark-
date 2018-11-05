@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class EndMenu : MonoBehaviour
 {
     public GameObject EndMenuUI;
+    public GameObject InGameUI;
     public Text FinalScore;
-    public Text DistanceTravelled;
+    public Text FinalDistance;
 
     public void Start()
     {
@@ -22,7 +23,8 @@ public class EndMenu : MonoBehaviour
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
             FinalScore.text = "Final Score: " + playerController.finalScore.ToString() ;
-            DistanceTravelled.text = Distance.otherUIText;
+            FinalDistance.text = Distance.otherUIText.ToString();
+            InGameUI.SetActive(false);
         }
 
     }

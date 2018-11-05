@@ -18,7 +18,6 @@ public class Trigger : MonoBehaviour {
 
         else if (other.gameObject.CompareTag("Obstacle"))
         {
-            other.gameObject.SetActive(false);
             Debug.Log("rock");
             CollideWithRock = true;
         }
