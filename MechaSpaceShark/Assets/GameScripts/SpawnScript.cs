@@ -1,22 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpawnScript : MonoBehaviour
 {
-
+    public GameObject player;
     public GameObject[] obj;
-    public float spawnMin = 1f; 
-    public float spawnMax = 2f; 
+    public List <GameObject> active = new List <GameObject>();
+    public List<GameObject> inactive = new List<GameObject>();
+    float timer;
+    float randomF;
 
     void Start()
     {
         Spawn();
+        randomF = Random.Range(0.0f, 10.0f);
+    }
+
+    public void Update()
+    {
+        //Spawn();
+        timer = timer + Time.deltaTime;
+        if (timer >= randomF)
+        {
+            timer = 0;
+            randomF = Random.Range(0.0f, 1.0f);
+            Spawn();
+        }
+        //Debug.Log("updating");
+
     }
 
     void Spawn()
     {
-        Instantiate(obj[Random.Range(0, obj.Length)], transform.position, Quaternion.identity);
-        Invoke("Spawn", Random.Range(spawnMin, spawnMax));
+        GameObject food = ObjectPooler.SharedInstance.GetPooledObject();
+        if (food!= null)
+        {
+            food.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400), player.transform.position.z + Random.Range(-100, 400));
+            food.SetActive(true);
+            active.Add(food);
+        }
+
     }
 
 }

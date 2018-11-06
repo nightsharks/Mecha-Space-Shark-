@@ -9,11 +9,10 @@ public class playerController : MonoBehaviour {
     public Text displayScore;
     public static int finalScore = 0;
 
-    void Start()
+    void OnEnable()
     {
         scoreCount = 0;
-        scoreText();
-       
+        scoreText();      
     }
     void Update()
     {

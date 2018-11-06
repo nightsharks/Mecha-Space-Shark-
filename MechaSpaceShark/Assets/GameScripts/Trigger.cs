@@ -21,10 +21,11 @@ public class Trigger : MonoBehaviour {
             Debug.Log("rock");
             CollideWithRock = true;
         }
+        
     }
 
 
-    void Update()
+    void LateUpdate()
     {
         CollideWithFood = false;
     }

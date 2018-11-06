@@ -11,6 +11,7 @@ TagManager:
   - Pickup
   - 'Consumable '
   - Apple
+  - Boundary
   layers:
   - Default
   - TransparentFX
