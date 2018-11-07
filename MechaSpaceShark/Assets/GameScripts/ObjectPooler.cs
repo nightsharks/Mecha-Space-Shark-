@@ -6,7 +6,6 @@ public class ObjectPooler : MonoBehaviour {
 
     public static ObjectPooler SharedInstance;
     public List<GameObject> pooledObjectsConsumable;
-    public List<GameObject> pooledObjectsObstacle;
     public GameObject objectToPool;
     public int amountToPool;
 
@@ -27,6 +26,11 @@ public class ObjectPooler : MonoBehaviour {
 
     }
 
+    public void Update()
+    {
+        Debug.Log("object pooler script");
+    }
+
     public GameObject GetPooledObject()
     {
         for (int i = 0; i < pooledObjectsConsumable.Count; i++)
@@ -38,6 +42,7 @@ public class ObjectPooler : MonoBehaviour {
         }
         return null;
     }
+
 
 
 

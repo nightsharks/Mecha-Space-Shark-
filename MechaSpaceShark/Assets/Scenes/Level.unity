@@ -561,8 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251f048d00c96b49ad0b415326998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects:
-  - {fileID: 1658276886923818, guid: e2b533a32b6694549bb417021da9e9ec, type: 2}
+  pooledObjectsConsumable: []
   objectToPool: {fileID: 1342735986396938, guid: e6f4d61519ef84d4391e5415879f4c6b,
     type: 2}
   amountToPool: 20
@@ -762,7 +761,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -21.032063, y: 327.6336}
+  m_Offset: {x: 52.46552, y: 256.347}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -773,7 +772,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 43.064125, y: 1346.8086}
+  m_Size: {x: 23.199913, y: 1807.3082}
   m_EdgeRadius: 0
 --- !u!50 &955562272
 Rigidbody2D:
@@ -1014,6 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5a3bc58a0851d478f270dae6e23001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inactive: []
 --- !u!1 &1067883311
 GameObject:
   m_ObjectHideFlags: 0

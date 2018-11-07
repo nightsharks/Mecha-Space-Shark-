@@ -8,8 +8,10 @@ public class SpawnScript : MonoBehaviour
     public GameObject[] obj;
     public List <GameObject> active = new List <GameObject>();
     public List<GameObject> inactive = new List<GameObject>();
+
     float timer;
     float randomF;
+
 
     void Start()
     {
@@ -19,7 +21,6 @@ public class SpawnScript : MonoBehaviour
 
     public void Update()
     {
-        //Spawn();
         timer = timer + Time.deltaTime;
         if (timer >= randomF)
         {
@@ -27,7 +28,6 @@ public class SpawnScript : MonoBehaviour
             randomF = Random.Range(0.0f, 1.0f);
             Spawn();
         }
-        //Debug.Log("updating");
 
     }
 
