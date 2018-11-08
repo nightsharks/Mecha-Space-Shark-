@@ -9,6 +9,13 @@ public class ObjectPooler : MonoBehaviour {
     public GameObject objectToPool;
     public int amountToPool;
 
+    public GameObject player;
+    public List<GameObject> active = new List<GameObject>();
+    public List<GameObject> inactive = new List<GameObject>();
+
+    float timer;
+    float randomF;
+
     void Awake()
     {
         SharedInstance = this; 
@@ -24,11 +31,21 @@ public class ObjectPooler : MonoBehaviour {
             pooledObjectsConsumable.Add(obj);
         }
 
+        Spawn();
+        randomF = Random.Range(0.0f, 10.0f);
+
     }
 
     public void Update()
     {
-        Debug.Log("object pooler script");
+        //Debug.Log("object pooler script");
+        timer = timer + Time.deltaTime;
+        if (timer >= randomF)
+        {
+            timer = 0;
+            randomF = Random.Range(0.0f, 1.0f);
+            Spawn();
+        }
     }
 
     public GameObject GetPooledObject()
@@ -43,7 +60,17 @@ public class ObjectPooler : MonoBehaviour {
         return null;
     }
 
+   public void Spawn()
+    {
+        GameObject food = SharedInstance.GetPooledObject();
+        if (food != null)
+        {
+            food.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400), player.transform.position.z + Random.Range(-100, 400));
+            food.SetActive(true);
+            active.Add(food);
+        }
 
+    }
 
 
 }

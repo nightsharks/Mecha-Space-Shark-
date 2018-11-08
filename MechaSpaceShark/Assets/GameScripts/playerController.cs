@@ -8,14 +8,24 @@ public class playerController : MonoBehaviour {
     public int scoreCount;
     public Text displayScore;
     public static int finalScore = 0;
+    public static float playerLocationX;
+    public GameObject player;
 
     void OnEnable()
     {
         scoreCount = 0;
         scoreText();      
     }
+
+     void Start()
+    {
+        
+    }
+
     void Update()
     {
+        playerLocationX = player.transform.localPosition.x;
+
         var y = Input.GetAxis("Vertical") * Time.deltaTime * 200.0f;
         var x = Time.deltaTime * 300.0f;
 

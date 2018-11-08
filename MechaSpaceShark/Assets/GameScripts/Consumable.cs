@@ -1,23 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Consumable : MonoBehaviour
 {
-    public GameObject other;
-    public void OnTriggerEnter2D(Collider2D collision)
+    public Transform player;
+    public Transform thisObject;
+    public float distanceFromPlayer;
+    public GameObject currentObject;
+    public bool isObjectBehindPlayer;
+
+    //need to check objects position to make sure it's behind player
+
+        // 0 is left and it gets smaller as you go to the right
+
+    public void Update()
     {
-        if (collision.gameObject.tag == "Boundary")
+        if (playerController.playerLocationX < currentObject.transform.localPosition.x)
         {
-            if (gameObject.tag == "Apple")
-            {
-                gameObject.SetActive(false);
-                Debug.Log("the apple thing worked");
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            Debug.Log("this works");
+            currentObject.SetActive(false);
         }
     }
 }
