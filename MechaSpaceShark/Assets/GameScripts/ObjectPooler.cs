@@ -10,8 +10,6 @@ public class ObjectPooler : MonoBehaviour {
     public int amountToPool;
 
     public GameObject player;
-    public List<GameObject> active = new List<GameObject>();
-    public List<GameObject> inactive = new List<GameObject>();
 
     float timer;
     float randomF;
@@ -31,7 +29,7 @@ public class ObjectPooler : MonoBehaviour {
             pooledObjectsConsumable.Add(obj);
         }
 
-        randomF = Random.Range(0.0f, 10.0f);
+        randomF = 3;
 
     }
 
@@ -42,7 +40,7 @@ public class ObjectPooler : MonoBehaviour {
         if (timer >= randomF)
         {
             timer = 0;
-            randomF = Random.Range(0.0f, 1.0f);
+            randomF = Random.Range(0.0f, 2.0f);
             Spawn();
         }
     }
@@ -53,7 +51,7 @@ public class ObjectPooler : MonoBehaviour {
         {
             if (!pooledObjectsConsumable[i].activeInHierarchy)
             {
-                return pooledObjectsConsumable[i];
+                return pooledObjectsConsumable[i];     
             }
         }
         return null;
@@ -64,9 +62,8 @@ public class ObjectPooler : MonoBehaviour {
         GameObject food = SharedInstance.GetPooledObject();
         if (food != null)
         {
-            food.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400), player.transform.position.z + Random.Range(-100, 400));
+            food.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400));
             food.SetActive(true);
-            active.Add(food);
         }
 
     }

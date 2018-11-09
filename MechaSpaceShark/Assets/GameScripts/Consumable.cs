@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class Consumable : MonoBehaviour
 {
-    public Transform player;
-    public Transform thisObject;
-    public float distanceFromPlayer;
+    public GameObject player;
     public GameObject currentObject;
 
+    public float distanceFromPlayer;
     public static bool CollideWithFood = false;
-    public bool isObjectBehind = false;
+    public static bool isObjectBehind = false;
 
     //need to check objects position to make sure it's behind player
 
@@ -20,10 +19,11 @@ public class Consumable : MonoBehaviour
     public void Update()
     {
         isObjectBehindPlayer();
-        
+
         if (isObjectBehind)
         {
             currentObject.SetActive(false);
+            Debug.Log("i think this works");
         }
     }
 
@@ -44,7 +44,7 @@ public class Consumable : MonoBehaviour
 
     public void isObjectBehindPlayer()
     {
-        if(currentObject.transform.localPosition.x > player.localPosition.x)
+        if (currentObject.transform.position.x < player.transform.position.x)
         {
             isObjectBehind = true;
             Debug.Log("object behind");

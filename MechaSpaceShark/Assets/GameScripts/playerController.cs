@@ -36,6 +36,12 @@ public class playerController : MonoBehaviour {
             scoreCount++;
             scoreText();
         }
+
+        if(Obstacle.CollideWithAsteroid)
+        {
+            finalScore = scoreCount;
+            deleteScore();
+        }
     }
 
     public void scoreText()

@@ -157,10 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a293f3bf01a51b5498f054c980855c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4509839238192616, guid: ba9f08ef2e949424ab13f927439ab374, type: 2}
+  player: {fileID: 1333180673570124, guid: 7fe8f3d9dc407014494ed7acf6dbbefb, type: 2}
   thisObject: {fileID: 4075009603161622}
   distanceFromPlayer: 0
   currentObject: {fileID: 1342735986396938}
+  isObjectBehind: 0
 --- !u!212 &212299925952226810
 SpriteRenderer:
   m_ObjectHideFlags: 1
