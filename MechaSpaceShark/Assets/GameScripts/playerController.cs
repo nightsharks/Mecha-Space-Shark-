@@ -36,17 +36,6 @@ public class playerController : MonoBehaviour {
             scoreCount++;
             scoreText();
         }
-        //if(Trigger.CollideWithFood)
-        //{
-        //    scoreCount++;
-        //    scoreText();
-        //}
-
-        //if(Trigger.CollideWithRock)
-        //{
-        //    finalScore = scoreCount;
-        //    deleteScore();
-        //}
     }
 
     public void scoreText()

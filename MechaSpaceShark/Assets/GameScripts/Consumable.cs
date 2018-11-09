@@ -11,6 +11,7 @@ public class Consumable : MonoBehaviour
     public GameObject currentObject;
 
     public static bool CollideWithFood = false;
+    public bool isObjectBehind = false;
 
     //need to check objects position to make sure it's behind player
 
@@ -18,12 +19,12 @@ public class Consumable : MonoBehaviour
 
     public void Update()
     {
-        //if (playerController.playerLocationX > currentObject.transform.localPosition.x)
-        //{
-        //    Debug.Log("this works");
-            
-        //    currentObject.SetActive(false);
-        //}
+        isObjectBehindPlayer();
+        
+        if (isObjectBehind)
+        {
+            currentObject.SetActive(false);
+        }
     }
 
     void LateUpdate()
@@ -38,6 +39,15 @@ public class Consumable : MonoBehaviour
         {
             currentObject.SetActive(false);
             CollideWithFood = true;
+        }
+    }
+
+    public void isObjectBehindPlayer()
+    {
+        if(currentObject.transform.localPosition.x > player.localPosition.x)
+        {
+            isObjectBehind = true;
+            Debug.Log("object behind");
         }
     }
 }

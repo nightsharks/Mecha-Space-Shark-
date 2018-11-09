@@ -12,7 +12,7 @@ public class onClick : MonoBehaviour {
     public void startGame ()
     {
         SceneManager.LoadScene(sceneBuildIndex:1);
-        Trigger.CollideWithRock = false;
+        Obstacle.CollideWithAsteroid = false;
         Time.timeScale = 1f;
     }
 
@@ -24,7 +24,7 @@ public class onClick : MonoBehaviour {
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Trigger.CollideWithRock = false;
+        Obstacle.CollideWithAsteroid = false;
         Time.timeScale = 1f;
     }
 }

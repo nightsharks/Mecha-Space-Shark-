@@ -17,12 +17,12 @@ public class EndMenu : MonoBehaviour
 
     void Update()
     {
-        
-        if(Trigger.CollideWithRock)
+
+        if (Obstacle.CollideWithAsteroid)
         {
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
-            FinalScore.text = "Final Score: " + playerController.finalScore.ToString() ;
+            FinalScore.text = "Final Score: " + playerController.finalScore.ToString();
             FinalDistance.text = Distance.otherUIText.ToString();
             InGameUI.SetActive(false);
         }
