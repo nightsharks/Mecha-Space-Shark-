@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
 
     public void Update()
     {
-
+    
     }
 
 
