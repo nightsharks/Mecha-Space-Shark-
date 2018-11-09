@@ -31,7 +31,6 @@ public class ObjectPooler : MonoBehaviour {
             pooledObjectsConsumable.Add(obj);
         }
 
-        Spawn();
         randomF = Random.Range(0.0f, 10.0f);
 
     }

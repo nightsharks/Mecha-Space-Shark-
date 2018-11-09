@@ -31,17 +31,22 @@ public class playerController : MonoBehaviour {
 
         transform.Translate(x, y, 0);
 
-        if(Trigger.CollideWithFood)
+        if(Consumable.CollideWithFood)
         {
             scoreCount++;
             scoreText();
         }
+        //if(Trigger.CollideWithFood)
+        //{
+        //    scoreCount++;
+        //    scoreText();
+        //}
 
-        if(Trigger.CollideWithRock)
-        {
-            finalScore = scoreCount;
-            deleteScore();
-        }
+        //if(Trigger.CollideWithRock)
+        //{
+        //    finalScore = scoreCount;
+        //    deleteScore();
+        //}
     }
 
     public void scoreText()
