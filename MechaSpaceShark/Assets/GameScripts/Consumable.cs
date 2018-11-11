@@ -39,8 +39,8 @@ public class Consumable : MonoBehaviour
 
     public void isObjectBehindPlayer()
     {
-        if (currentObject.transform.position.x > playerPositionX)
-        {
+        if (player.transform.position.x > this.transform.position.x)
+            {
             isObjectBehind = true;
              Debug.Log("object behind");
         }
