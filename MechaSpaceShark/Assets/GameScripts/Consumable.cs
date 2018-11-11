@@ -9,21 +9,40 @@ public class Consumable : MonoBehaviour
     public GameObject currentObject;
 
     public float distanceFromPlayer;
+    public float playerPositionX;
     public static bool CollideWithFood = false;
     public static bool isObjectBehind = false;
 
-    //need to check objects position to make sure it's behind player
-
-    // 0 is left and it gets smaller as you go to the right
+    public void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     public void Update()
     {
-        isObjectBehindPlayer();
 
-        if (isObjectBehind)
+        //playerPositionX = player.transform.position.x;
+        //isObjectBehindPlayer();
+        ////Debug.Log(playerPositionX);
+
+        //if (isObjectBehind)
+        //{
+        //    currentObject.SetActive(false);
+        //    Debug.Log("i think this works");
+        //}
+        if (player.transform.position.x < this.transform.position.x)
         {
-            currentObject.SetActive(false);
-            Debug.Log("i think this works");
+            this.gameObject.SetActive(false);
+        }
+
+    }
+
+    public void isObjectBehindPlayer()
+    {
+        if (currentObject.transform.position.x > playerPositionX)
+        {
+            isObjectBehind = true;
+             Debug.Log("object behind");
         }
     }
 
@@ -32,22 +51,14 @@ public class Consumable : MonoBehaviour
         CollideWithFood = false;
     }
 
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             currentObject.SetActive(false);
             CollideWithFood = true;
         }
     }
 
-    public void isObjectBehindPlayer()
-    {
-        if (currentObject.transform.position.x < player.transform.position.x)
-        {
-            isObjectBehind = true;
-            Debug.Log("object behind");
-        }
-    }
+
 }

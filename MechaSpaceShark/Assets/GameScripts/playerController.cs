@@ -10,6 +10,8 @@ public class playerController : MonoBehaviour {
     public static int finalScore = 0;
     public static float playerLocationX;
     public GameObject player;
+    public float invincibleTime = 3.0f;
+    public bool isInvincible = false;
 
     void OnEnable()
     {
@@ -37,11 +39,19 @@ public class playerController : MonoBehaviour {
             scoreText();
         }
 
-        if(Obstacle.CollideWithAsteroid)
+        if (ShieldPickup.PickedUpShield)
+        {
+            invincibility();
+           // Debug.Log("invis");
+        }
+
+        if (Obstacle.CollideWithAsteroid)
         {
             finalScore = scoreCount;
             deleteScore();
         }
+
+
     }
 
     public void scoreText()
@@ -54,4 +64,20 @@ public class playerController : MonoBehaviour {
         displayScore.text = "";
     }
 
+    public void invincibility()
+    {
+        isInvincible = true;
+
+        CancelInvoke("SetDamageable"); 
+        Invoke("SetDamageable", invincibleTime);
+    }
+
+    void SetDamageable()
+    {
+        if(Obstacle.CollideWithAsteroid)
+        {
+            Obstacle.CollideWithAsteroid = false;
+            Debug.Log("collision false");
+        }
+    }
 }
