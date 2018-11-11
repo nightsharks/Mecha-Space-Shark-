@@ -21,30 +21,17 @@ public class Consumable : MonoBehaviour
     public void Update()
     {
 
-        //playerPositionX = player.transform.position.x;
-        //isObjectBehindPlayer();
-        ////Debug.Log(playerPositionX);
+        playerPositionX = player.transform.position.x;
+        Debug.Log(playerPositionX);
 
-        //if (isObjectBehind)
-        //{
-        //    currentObject.SetActive(false);
-        //    Debug.Log("i think this works");
-        //}
-        if (player.transform.position.x < this.transform.position.x)
+        if (player.transform.position.x - 300 > this.transform.position.x)
         {
             this.gameObject.SetActive(false);
         }
 
     }
 
-    public void isObjectBehindPlayer()
-    {
-        if (player.transform.position.x > this.transform.position.x)
-            {
-            isObjectBehind = true;
-             Debug.Log("object behind");
-        }
-    }
+
 
     void LateUpdate()
     {

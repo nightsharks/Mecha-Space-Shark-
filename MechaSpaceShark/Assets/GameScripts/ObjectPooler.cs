@@ -14,6 +14,12 @@ public class ObjectPooler : MonoBehaviour {
     float timer;
     float randomF;
 
+//    public GameObject playerInstance;
+//...
+//SpawnedObject = GameObject.Instantiate(....);
+//Consumable c = SpawnedObject.GetComponent<Consumable>();
+//    c.player = playerInstance;
+
     void Awake()
     {
         SharedInstance = this; 

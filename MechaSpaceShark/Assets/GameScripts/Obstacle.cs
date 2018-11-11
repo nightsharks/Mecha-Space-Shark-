@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-
+    public GameObject player;
     public GameObject currentObject;
 
     public static bool CollideWithAsteroid = false;
 
+    public void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
     public void Update()
     {
-    
+        if (player.transform.position.x - 300 > this.transform.position.x)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
