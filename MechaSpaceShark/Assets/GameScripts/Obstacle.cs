@@ -27,7 +27,16 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CollideWithAsteroid = true;
+            if (ShieldPickup.PickedUpShield == false)
+            {
+                CollideWithAsteroid = true;
+            }
+            else
+            {
+                Debug.Log("collission false");
+                CollideWithAsteroid = false;
+            }
         }
     }
+
 }

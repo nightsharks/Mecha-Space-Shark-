@@ -10,8 +10,14 @@ public class playerController : MonoBehaviour {
     public static int finalScore = 0;
     public static float playerLocationX;
     public GameObject player;
-    public float invincibleTime = 3.0f;
-    public bool isInvincible = false;
+
+    public GameObject sprite;
+
+    private IEnumerator coroutine;
+    private float invincibleSeconds = 3.0f;
+
+    SpriteRenderer invincibility;
+    Color invincibilityColor;
 
     void OnEnable()
     {
@@ -41,8 +47,9 @@ public class playerController : MonoBehaviour {
 
         if (ShieldPickup.PickedUpShield)
         {
-            invincibility();
-           // Debug.Log("invis");
+            invincibilityGlow();
+            coroutine = TimeIsDone(invincibleSeconds);
+            StartCoroutine(coroutine);           
         }
 
         if (Obstacle.CollideWithAsteroid)
@@ -50,8 +57,6 @@ public class playerController : MonoBehaviour {
             finalScore = scoreCount;
             deleteScore();
         }
-
-
     }
 
     public void scoreText()
@@ -64,20 +69,27 @@ public class playerController : MonoBehaviour {
         displayScore.text = "";
     }
 
-    public void invincibility()
+    IEnumerator TimeIsDone(float waitTime)
     {
-        isInvincible = true;
-
-        CancelInvoke("SetDamageable"); 
-        Invoke("SetDamageable", invincibleTime);
+        yield return new WaitForSeconds(3f);
+        ShieldPickup.PickedUpShield = false;
+        returnToDefaultColor();
     }
 
-    void SetDamageable()
+    public void invincibilityGlow()
     {
-        if(Obstacle.CollideWithAsteroid)
+        if(ShieldPickup.PickedUpShield)
         {
-            Obstacle.CollideWithAsteroid = false;
-            Debug.Log("collision false");
+            invincibility = sprite.GetComponent<SpriteRenderer>();
+            invincibility.color = Color.yellow;
+            Debug.Log("default");
         }
+    }
+
+    public void returnToDefaultColor()
+    {
+        invincibility = sprite.GetComponent<SpriteRenderer>();
+        invincibility.color = Color.white;
+        Debug.Log("blue");
     }
 }

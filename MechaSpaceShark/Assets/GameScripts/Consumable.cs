@@ -22,7 +22,7 @@ public class Consumable : MonoBehaviour
     {
 
         playerPositionX = player.transform.position.x;
-        Debug.Log(playerPositionX);
+        //Debug.Log(playerPositionX);
 
         if (player.transform.position.x - 300 > this.transform.position.x)
         {
