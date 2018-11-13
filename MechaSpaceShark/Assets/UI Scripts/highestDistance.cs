@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class highestScore {
+public class highestDistance {
 
-    public int highScores;
-    
+    public int highDistance;
+
 }

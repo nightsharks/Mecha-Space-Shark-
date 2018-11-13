@@ -36,7 +36,7 @@ public class playerController : MonoBehaviour {
         playerLocationX = player.transform.localPosition.x;
 
         var y = Input.GetAxis("Vertical") * Time.deltaTime * 200.0f;
-        var x = Time.deltaTime * 300.0f;
+        var x =  Time.deltaTime * 300.0f; //300 is speedy
 
         transform.Translate(x, y, 0);
 
@@ -91,6 +91,6 @@ public class playerController : MonoBehaviour {
     {
         invincibility = sprite.GetComponent<SpriteRenderer>();
         invincibility.color = Color.white;
-        Debug.Log("blue");
+        Debug.Log("cyan");
     }
 }

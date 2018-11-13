@@ -20,6 +20,7 @@ public class EndMenu : MonoBehaviour
     {
         scoreboard = FindObjectOfType<ScoreManager>();
         EndMenuUI.SetActive(false);
+        
     }
 
     void Update()
@@ -30,13 +31,15 @@ public class EndMenu : MonoBehaviour
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
            
-            // line 32 is calling null reference
             FinalScore.text = "Final Score: " + playerController.finalScore.ToString();
             FinalDistance.text = Distance.otherUIText.ToString();
-            scoreboard.SubmitNewPlayerScore(playerController.finalScore, Distance.distanceNumber);
+
+            scoreboard.SubmitNewPlayerScore(playerController.finalScore);
+            scoreboard.SubmitNewPlayerDistance(Distance.distanceInt);
+
             HighScore.text = "High Score: " + scoreboard.GetHighestPlayerScore().ToString();
             HighDistance.text = "Farthest Distance: " + scoreboard.GetHighestPlayerDistance().ToString();
-            
+         
             InGameUI.SetActive(false);
         }
 

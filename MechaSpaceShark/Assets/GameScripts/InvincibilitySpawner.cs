@@ -10,7 +10,7 @@ public class InvincibilitySpawner : MonoBehaviour {
     private float spawnMin = 1f; 
     private float spawnMax = 50f;
 
-    private int distanceToDespawn = 900;
+    private int distanceToDespawn = 300;
 
     private void Start()
     {

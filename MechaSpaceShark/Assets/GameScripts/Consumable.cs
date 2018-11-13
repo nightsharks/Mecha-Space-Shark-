@@ -12,6 +12,7 @@ public class Consumable : MonoBehaviour
     public float playerPositionX;
     public static bool CollideWithFood = false;
     public static bool isObjectBehind = false;
+    private int distanceToDespawn = 900;
 
     public void Start()
     {
@@ -24,7 +25,7 @@ public class Consumable : MonoBehaviour
         playerPositionX = player.transform.position.x;
         //Debug.Log(playerPositionX);
 
-        if (player.transform.position.x - 300 > this.transform.position.x)
+        if (player.transform.position.x - distanceToDespawn > this.transform.position.x)
         {
             this.gameObject.SetActive(false);
         }
