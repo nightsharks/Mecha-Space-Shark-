@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     public GameObject player;
     public GameObject currentObject;
 
+    public int distanceToDespawn = 900;
     public static bool CollideWithAsteroid = false;
 
     public void Start()
@@ -16,7 +17,7 @@ public class Obstacle : MonoBehaviour
 
     public void Update()
     {
-        if (player.transform.position.x - 300 > this.transform.position.x)
+        if (player.transform.position.x - distanceToDespawn > this.transform.position.x)
         {
             this.gameObject.SetActive(false);
         }

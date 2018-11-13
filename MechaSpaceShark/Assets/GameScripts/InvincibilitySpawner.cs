@@ -8,7 +8,9 @@ public class InvincibilitySpawner : MonoBehaviour {
     public GameObject player;
 
     private float spawnMin = 1f; 
-    private float spawnMax = 50f; 
+    private float spawnMax = 50f;
+
+    private int distanceToDespawn = 900;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class InvincibilitySpawner : MonoBehaviour {
 
     private void Update()
     {
-        if (player.transform.position.x - 300 > this.transform.position.x)
+        if (player.transform.position.x - distanceToDespawn > this.transform.position.x)
         {
             this.gameObject.SetActive(false);
         }

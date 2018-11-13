@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class Firebreathing : MonoBehaviour {
 
-    public GameObject Fire;
+    public ParticleSystem Fire;
+    public GameObject frontOfShark;
     public Transform FireSpawn;
 
+    private void Start()
+    {
+        Fire.Pause();
+    }
     void Update () {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             BreatheFire();
         }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            Fire.Stop();
+
+        }
     }
 
     public void BreatheFire()
     {
-        var flame = (GameObject)Instantiate (Fire, FireSpawn.position, FireSpawn.rotation);
-
-        Destroy(flame, .5f);
+        Fire.Play();
+        Debug.Log("firebreathing");
     }
 }
