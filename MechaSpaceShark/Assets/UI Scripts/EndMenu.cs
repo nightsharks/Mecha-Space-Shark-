@@ -29,11 +29,11 @@ public class EndMenu : MonoBehaviour
         {
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
-            scoreboard.SubmitNewPlayerScore (playerController.finalScore, Distance.distanceNumber);
+           
             // line 32 is calling null reference
             FinalScore.text = "Final Score: " + playerController.finalScore.ToString();
             FinalDistance.text = Distance.otherUIText.ToString();
-      
+            scoreboard.SubmitNewPlayerScore(playerController.finalScore, Distance.distanceNumber);
             HighScore.text = "High Score: " + scoreboard.GetHighestPlayerScore().ToString();
             HighDistance.text = "Farthest Distance: " + scoreboard.GetHighestPlayerDistance().ToString();
             

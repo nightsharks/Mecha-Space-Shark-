@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 538766306}
   - component: {fileID: 538766304}
   - component: {fileID: 538766307}
+  - component: {fileID: 538766308}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -655,6 +656,17 @@ MonoBehaviour:
   invincibilityItem: {fileID: 1694931437966598, guid: f7fb6abb3e28e864c9c96656a1c06209,
     type: 2}
   player: {fileID: 0}
+--- !u!114 &538766308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538766302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c79a3cb9a9d54693364ca07e8f34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &847749918
 Prefab:
   m_ObjectHideFlags: 0
@@ -810,6 +822,7 @@ MonoBehaviour:
   FinalDistance: {fileID: 441214300}
   HighScore: {fileID: 902414914}
   HighDistance: {fileID: 1791597503}
+  scoreboard: {fileID: 0}
 --- !u!1 &902414912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1800,6 @@ MonoBehaviour:
   objectA: {fileID: 1459794724}
   objectB: {fileID: 969134867}
   UIText: {fileID: 1232654713}
-  distanceNumber: 0
 --- !u!224 &1459794724
 RectTransform:
   m_ObjectHideFlags: 0

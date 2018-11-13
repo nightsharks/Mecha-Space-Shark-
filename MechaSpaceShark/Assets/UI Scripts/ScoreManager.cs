@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour {
     {
         //DontDestroyOnLoad(gameObject);
         LoadPlayerProgress();
+        LoadPlayerProgressDistance();
     }
 
     public void SubmitNewPlayerScore(int newScore, float newDistance)
@@ -26,7 +27,7 @@ public class ScoreManager : MonoBehaviour {
         if (newDistance > highestDistance.highDistance)
         {
             highestDistance.highDistance = newDistance;
-            SavePlayerProgress();
+            SavePlayerProgressDistance();
             Debug.Log("progress");
         }
     }
@@ -42,6 +43,12 @@ public class ScoreManager : MonoBehaviour {
     private void SavePlayerProgress()
     {
         PlayerPrefs.SetInt("highestScore", highestScores.highScores);
+     
+    }
+
+    private void SavePlayerProgressDistance()
+    {
+        
         PlayerPrefs.SetFloat("highestDistance", highestDistance.highDistance);
     }
 
@@ -53,6 +60,11 @@ public class ScoreManager : MonoBehaviour {
         {
             highestScores.highScores = PlayerPrefs.GetInt("highestScore");
         }
+
+    }
+
+    private void LoadPlayerProgressDistance()
+    {
 
         highestDistance = new highestScore();
 
