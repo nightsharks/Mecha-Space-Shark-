@@ -7,12 +7,13 @@ public class playerController : MonoBehaviour {
 
     public int scoreCount;
     public Text displayScore;
-    public static int finalScore = 0;
+    public static int finalScore = 0;   
+    public static int finalDistance = 0;
+
     public static float playerLocationX;
     public GameObject player;
 
     public GameObject sprite;
-
     private IEnumerator coroutine;
     private float invincibleSeconds = 3.0f;
 

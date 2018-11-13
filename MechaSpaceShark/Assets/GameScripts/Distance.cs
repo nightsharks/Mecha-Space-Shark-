@@ -9,7 +9,7 @@ public class Distance : MonoBehaviour
     public Transform objectB;
     public Text UIText;
     public static string otherUIText = "test";
-    public float distanceNumber;
+    public static float distanceNumber = 0;
 
     private void Start()
     {
