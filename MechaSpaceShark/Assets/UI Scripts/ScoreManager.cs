@@ -21,7 +21,6 @@ public class ScoreManager : MonoBehaviour {
             highestScores.highScores = newScore;
             SavePlayerProgress();            
         }
-
     }
 
     public void SubmitNewPlayerDistance(int newDistance)
@@ -51,8 +50,8 @@ public class ScoreManager : MonoBehaviour {
 
     private void SavePlayerProgressDistance()
     {
-        
-        PlayerPrefs.SetInt("highestDistance", highestDistance.highDistance);
+      
+        PlayerPrefs.SetInt("highestDistanceScore", highestDistance.highDistance);
         PlayerPrefs.Save();
     }
 
@@ -71,14 +70,17 @@ public class ScoreManager : MonoBehaviour {
 
     private void LoadPlayerProgressDistance()
     {
-
         highestDistance = new highestDistance();
 
-        if (PlayerPrefs.HasKey("highestDistance"))
+        if (PlayerPrefs.HasKey("highestDistanceScore"))
         {
-            highestDistance.highDistance = PlayerPrefs.GetInt("highestDistance");
+            highestDistance.highDistance = PlayerPrefs.GetInt("highestDistanceScore");
             Debug.Log(" distance key exists");
             Debug.Log(highestDistance.highDistance);
+        }
+        else
+        {
+            Debug.Log("key doesn't exist");
         }
     }
 }
