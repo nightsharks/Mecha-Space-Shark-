@@ -17,10 +17,11 @@ public class Distance : MonoBehaviour
     private void Start()
     {
         UIText.text = "";
+        distanceNumber = 0;
     }
     public void LateUpdate()
     {
-        distanceNumber = Vector3.Distance(objectA.position, objectB.position);
+        distanceNumber = Vector3.Distance(objectA.position, objectB.position) / 15;
         int distanceInt = (int)Math.Round(distanceNumber);
 
         UIText.text = "Distance Traveled: " + distanceInt;
