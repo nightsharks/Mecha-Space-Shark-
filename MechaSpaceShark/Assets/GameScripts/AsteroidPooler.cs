@@ -40,7 +40,7 @@ public class AsteroidPooler : MonoBehaviour {
         if (timer >= randomF)
         {
             timer = 0;
-            randomF = Random.Range(1.0f, 3.0f);
+            randomF = Random.Range(1.0f, 2.0f);
             Spawn();
         }
     }
@@ -64,7 +64,7 @@ public class AsteroidPooler : MonoBehaviour {
 
         if (rock != null)
         {
-            rock.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400));
+            rock.transform.position = new Vector2(player.transform.position.x + 1300, Random.Range(-500, 300));
             rock.SetActive(true);
         }
 

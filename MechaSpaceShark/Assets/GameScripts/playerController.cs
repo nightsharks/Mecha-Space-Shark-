@@ -17,6 +17,8 @@ public class playerController : MonoBehaviour {
     private IEnumerator coroutine;
     private float invincibleSeconds = 3.0f;
 
+    public Camera mainCamera;
+
     SpriteRenderer invincibility;
     Color invincibilityColor;
 

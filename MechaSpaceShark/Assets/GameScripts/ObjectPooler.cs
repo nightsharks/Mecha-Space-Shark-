@@ -68,7 +68,8 @@ public class ObjectPooler : MonoBehaviour {
         GameObject food = SharedInstance.GetPooledObject();
         if (food != null)
         {
-            food.transform.position = new Vector3(player.transform.position.x + Random.Range(-100, 400), player.transform.position.y + Random.Range(-100, 400));
+            food.transform.position = new Vector2(player.transform.position.x + 1500, Random.Range(-500, 500));
+
             food.SetActive(true);
         }
 
