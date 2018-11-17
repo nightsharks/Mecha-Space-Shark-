@@ -24,20 +24,23 @@ public class Obstacle : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            if (ShieldPickup.PickedUpShield == false)
-            {
-                CollideWithAsteroid = true;
-            }
-            else
-            {
-                Debug.Log("collission false");
-                CollideWithAsteroid = false;
-            }
-        }
+        Debug.Log("collided");
+        //if (collision.otherCollider.CompareTag("Player"))
+        //{
+        //    if (ShieldPickup.PickedUpShield == false)
+        //    {
+        //        CollideWithAsteroid = true;
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("collission false");
+        //        CollideWithAsteroid = false;
+        //    }
+        //}
+        CollideWithAsteroid = true;
     }
+
 
 }

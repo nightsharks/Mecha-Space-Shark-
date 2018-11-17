@@ -10,7 +10,7 @@ public class Firebreathing : MonoBehaviour {
 
     private void Start()
     {
-        Fire.Pause();
+        Fire.Stop();
     }
     void Update () {
 
@@ -28,7 +28,7 @@ public class Firebreathing : MonoBehaviour {
 
     public void BreatheFire()
     {
-        if (!Fire.isPlaying)
+        if (Fire.isStopped)
         {
             Fire.Play();
             Debug.Log("firebreathing");
