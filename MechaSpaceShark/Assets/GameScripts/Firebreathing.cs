@@ -21,14 +21,25 @@ public class Firebreathing : MonoBehaviour {
 
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            Fire.Stop();
+            StopFire();
 
         }
     }
 
     public void BreatheFire()
     {
-        Fire.Play();
-        Debug.Log("firebreathing");
+        if (!Fire.isPlaying)
+        {
+            Fire.Play();
+            Debug.Log("firebreathing");
+        }
+    }
+
+    public void StopFire()
+    {
+        if(Fire.isPlaying)
+        {
+            Fire.Stop();
+        }
     }
 }
