@@ -21,8 +21,6 @@ public class Consumable : MonoBehaviour
 
     public void Update()
     {
-
-        playerPositionX = player.transform.position.x;
         //Debug.Log(playerPositionX);
 
         if (player.transform.position.x - distanceToDespawn > this.transform.position.x)

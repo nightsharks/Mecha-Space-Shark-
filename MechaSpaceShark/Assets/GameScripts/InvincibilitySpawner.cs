@@ -4,30 +4,72 @@ using UnityEngine;
 
 public class InvincibilitySpawner : MonoBehaviour {
 
-    public GameObject invincibilityItem;
     public GameObject player;
 
-    private float spawnMin = 1f; 
-    private float spawnMax = 50f;
+    private int random1 = 0;
+    private int random2 = 100;
+    int num1, num2;
 
-    private int distanceToDespawn = 300;
+    public static InvincibilitySpawner SharedInstance;
+    public List<GameObject> invincibilityObjects;
+    public GameObject objectToPool;
+    private int amountToPool = 1;
 
-    private void Start()
+   void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+       SharedInstance = this;
     }
 
-    private void Update()
+   void Start()
     {
-        if (player.transform.position.x - distanceToDespawn > this.transform.position.x)
+        invincibilityObjects = new List<GameObject>();
+         for (int i = 0; i < amountToPool; i++)
+         {
+             GameObject obj = (GameObject)Instantiate(objectToPool);
+             obj.SetActive(false);
+             invincibilityObjects.Add(obj);
+            }
+
+    }
+
+    public void Update()
+     {
+
+        num1 = Random.Range(random1, random2);
+        num2 = Random.Range(random1, random2);
+
+        Debug.Log(num1 + " and " + num2);
+
+        if (num1 == num2)
         {
-            this.gameObject.SetActive(false);
+            Spawn();
+        }
+
+    }
+
+    public GameObject GetPooledObject()
+         {
+            for (int i = 0; i < invincibilityObjects.Count; i++)
+            {
+                if (!invincibilityObjects[i].activeInHierarchy)
+                {
+                    return invincibilityObjects[i];
+                }
+            }
+            return null;
+        }
+
+
+    public void Spawn()
+        {
+            GameObject pickup = SharedInstance.GetPooledObject();
+            if (pickup != null)
+            {
+                pickup.transform.position = new Vector2(player.transform.position.x + 1500, Random.Range(-500, 500));
+
+                pickup.SetActive(true);
+            }
+
         }
     }
 
-    void Spawn()
-    {
-        Instantiate(invincibilityItem, transform.position, Quaternion.identity);
-        Invoke("Spawn", Random.Range(spawnMin, spawnMax));
-    }
-}
