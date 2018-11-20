@@ -12,7 +12,7 @@ public class Distance : MonoBehaviour
 
     public static string otherUIText = "test";
     public float distanceNumber;
-    public static int distanceInt;
+    public static int distanceInt = 10;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class Distance : MonoBehaviour
     public void LateUpdate()
     {
         distanceNumber = Vector3.Distance(objectA.position, objectB.position) / 15;
-        int distanceInt = (int)Math.Round(distanceNumber);
+        distanceInt = Mathf.RoundToInt(distanceNumber);
 
         UIText.text = "Distance Traveled: " + distanceInt;
 
