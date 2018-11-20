@@ -8,12 +8,13 @@ public class AsteroidPooler : MonoBehaviour {
     public List<GameObject> pooledObjectsAsteroid;
     public GameObject objectToPool;
     public GameObject objectToPool2;
+    public GameObject objectToPool3;
     public int amountToPool;
 
     public GameObject player;
 
     float timer;
-    float randomF;
+    float randomF = 3; //don't ask
 
     void Awake()
     {
@@ -25,25 +26,29 @@ public class AsteroidPooler : MonoBehaviour {
         pooledObjectsAsteroid = new List<GameObject>();
         for (int i = 0; i < amountToPool; i++)
         {
-            int random = Random.Range(0, 2);
+            int random = Random.Range(0, 3);
             if(random == 1)
             {
                 GameObject obj = (GameObject)Instantiate(objectToPool);
                 obj.SetActive(false);
                 pooledObjectsAsteroid.Add(obj);
             }
-            else
+            else if (random == 2)
             {
                 GameObject obj2 = (GameObject)Instantiate(objectToPool2);
                 obj2.SetActive(false);
                 pooledObjectsAsteroid.Add(obj2);
             }
+            else //if (random == 3)
+            {
+                GameObject obj3 = (GameObject)Instantiate(objectToPool3);
+                obj3.SetActive(false);
+                pooledObjectsAsteroid.Add(obj3);               
+            }
             
                     
             
         }
-
-        randomF = 2;
 
     }
 
@@ -54,7 +59,7 @@ public class AsteroidPooler : MonoBehaviour {
         if (timer >= randomF)
         {
             timer = 0;
-            randomF = Random.Range(1.0f, 2.0f);
+            randomF = Random.Range(1.0f, 1.5f);
             Spawn();
         }
     }

@@ -1004,6 +1004,8 @@ MonoBehaviour:
     type: 2}
   objectToPool2: {fileID: 1495088052186850, guid: 6392146333c30c747aa7295702fc8723,
     type: 2}
+  objectToPool3: {fileID: 1628986950863190, guid: 2a7e0f0d28788a34e8e01244705c5360,
+    type: 2}
   amountToPool: 20
   player: {fileID: 26252467}
 --- !u!4 &538766305
