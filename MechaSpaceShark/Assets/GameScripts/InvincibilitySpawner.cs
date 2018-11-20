@@ -7,7 +7,7 @@ public class InvincibilitySpawner : MonoBehaviour {
     public GameObject player;
 
     private int random1 = 0;
-    private int random2 = 100;
+    private int random2 = 300;
     int num1, num2;
 
     public static InvincibilitySpawner SharedInstance;
@@ -38,7 +38,7 @@ public class InvincibilitySpawner : MonoBehaviour {
         num1 = Random.Range(random1, random2);
         num2 = Random.Range(random1, random2);
 
-        Debug.Log(num1 + " and " + num2);
+       // Debug.Log(num1 + " and " + num2);
 
         if (num1 == num2)
         {

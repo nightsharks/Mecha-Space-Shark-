@@ -7,6 +7,7 @@ public class AsteroidPooler : MonoBehaviour {
     public static AsteroidPooler SharedInstance;
     public List<GameObject> pooledObjectsAsteroid;
     public GameObject objectToPool;
+    public GameObject objectToPool2;
     public int amountToPool;
 
     public GameObject player;
@@ -24,9 +25,22 @@ public class AsteroidPooler : MonoBehaviour {
         pooledObjectsAsteroid = new List<GameObject>();
         for (int i = 0; i < amountToPool; i++)
         {
-            GameObject obj = (GameObject)Instantiate(objectToPool);
-            obj.SetActive(false);
-            pooledObjectsAsteroid.Add(obj);
+            int random = Random.Range(0, 2);
+            if(random == 1)
+            {
+                GameObject obj = (GameObject)Instantiate(objectToPool);
+                obj.SetActive(false);
+                pooledObjectsAsteroid.Add(obj);
+            }
+            else
+            {
+                GameObject obj2 = (GameObject)Instantiate(objectToPool2);
+                obj2.SetActive(false);
+                pooledObjectsAsteroid.Add(obj2);
+            }
+            
+                    
+            
         }
 
         randomF = 2;

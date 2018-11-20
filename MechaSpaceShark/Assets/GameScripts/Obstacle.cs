@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Obstacle : MonoBehaviour
 {
@@ -17,29 +18,35 @@ public class Obstacle : MonoBehaviour
 
     public void Update()
     {
+        if (ShieldPickup.PickedUpShield)
+        {
+            this.GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<Collider2D>().enabled = true;
+        }
+
         if (player.transform.position.x - distanceToDespawn > this.transform.position.x)
         {
             this.gameObject.SetActive(false);
         }
+        
     }
 
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collided");
-        //if (collision.otherCollider.CompareTag("Player"))
-        //{
-        //    if (ShieldPickup.PickedUpShield == false)
-        //    {
-        //        CollideWithAsteroid = true;
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("collission false");
-        //        CollideWithAsteroid = false;
-        //    }
-        //}
-        CollideWithAsteroid = true;
+        if (ShieldPickup.PickedUpShield)
+        {
+            CollideWithAsteroid = false;      
+        }
+        else
+        {
+            CollideWithAsteroid = true;
+        }
+        
     }
 
 

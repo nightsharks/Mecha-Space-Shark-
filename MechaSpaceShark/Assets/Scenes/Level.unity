@@ -244,7 +244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4463034889683308, guid: 7fe8f3d9dc407014494ed7acf6dbbefb, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114953661298379008, guid: 7fe8f3d9dc407014494ed7acf6dbbefb,
         type: 2}
@@ -1002,6 +1002,8 @@ MonoBehaviour:
   pooledObjectsAsteroid: []
   objectToPool: {fileID: 1658276886923818, guid: e2b533a32b6694549bb417021da9e9ec,
     type: 2}
+  objectToPool2: {fileID: 1495088052186850, guid: 6392146333c30c747aa7295702fc8723,
+    type: 2}
   amountToPool: 20
   player: {fileID: 26252467}
 --- !u!4 &538766305
@@ -1015,7 +1017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &538766306
 MonoBehaviour:
@@ -1760,7 +1762,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157659976}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2498,7 +2500,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
