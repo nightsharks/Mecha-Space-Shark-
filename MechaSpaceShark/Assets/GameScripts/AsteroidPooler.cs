@@ -29,9 +29,9 @@ public class AsteroidPooler : MonoBehaviour {
             int random = Random.Range(0, 3);
             if(random == 1)
             {
-                GameObject obj = (GameObject)Instantiate(objectToPool);
-                obj.SetActive(false);
-                pooledObjectsAsteroid.Add(obj);
+                GameObject obj3 = (GameObject)Instantiate(objectToPool3);
+                obj3.SetActive(false);
+                pooledObjectsAsteroid.Add(obj3);
             }
             else if (random == 2)
             {
@@ -41,25 +41,21 @@ public class AsteroidPooler : MonoBehaviour {
             }
             else //if (random == 3)
             {
-                GameObject obj3 = (GameObject)Instantiate(objectToPool3);
-                obj3.SetActive(false);
-                pooledObjectsAsteroid.Add(obj3);               
-            }
-            
-                    
-            
+                GameObject obj1 = (GameObject)Instantiate(objectToPool);
+                obj1.SetActive(false);
+                pooledObjectsAsteroid.Add(obj1);               
+            }           
         }
-
     }
 
     public void Update()
     {
         //Debug.Log("object pooler script");
         timer = timer + Time.deltaTime;
-        if (timer >= randomF)
+        if (timer >= randomF -1)
         {
             timer = 0;
-            randomF = Random.Range(1.0f, 1.5f);
+            randomF = Random.Range(1.0f, 2.0f);
             Spawn();
         }
     }
@@ -84,6 +80,8 @@ public class AsteroidPooler : MonoBehaviour {
         if (rock != null)
         {
             rock.transform.position = new Vector2(player.transform.position.x + 1300, Random.Range(-500, 300));
+            Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            rock.transform.rotation = randomRotation;
             rock.SetActive(true);
         }
 

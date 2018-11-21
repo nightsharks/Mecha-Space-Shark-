@@ -35,14 +35,15 @@ public class Obstacle : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collisionHappened)
     {
         Debug.Log("collided");
+        Debug.Log(collisionHappened.otherCollider.gameObject);
         if (ShieldPickup.PickedUpShield)
         {
             CollideWithAsteroid = false;      
         }
-        else
+        else if (collisionHappened.collider.tag == "Player")
         {
             CollideWithAsteroid = true;
         }

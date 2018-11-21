@@ -326,7 +326,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1102357166920764, guid: 7fe8f3d9dc407014494ed7acf6dbbefb, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 50485756636909932, guid: 7fe8f3d9dc407014494ed7acf6dbbefb,
         type: 2}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 94758598}
   m_Layer: 0
   m_Name: FireSpawner
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +746,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020527363, y: 13.40653}
+  m_Offset: {x: 0.005662918, y: 13.553224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -757,7 +757,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.743683, y: 1.2448387}
+  m_Size: {x: 28.796062, y: 0.95145226}
   m_EdgeRadius: 0
 --- !u!114 &232664484
 MonoBehaviour:
@@ -779,7 +779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232664482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4448.8, y: 1110, z: 0}
+  m_LocalPosition: {x: 4457.3, y: 1110, z: 0}
   m_LocalScale: {x: 156.816, y: 54.176315, z: 1}
   m_Children:
   - {fileID: 1366864767}
@@ -1069,7 +1069,7 @@ MonoBehaviour:
     type: 2}
   objectToPool3: {fileID: 1628986950863190, guid: 2a7e0f0d28788a34e8e01244705c5360,
     type: 2}
-  amountToPool: 20
+  amountToPool: 60
   player: {fileID: 26252467}
 --- !u!4 &538766305
 Transform:
@@ -1523,7 +1523,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005783081, y: 13.40653}
+  m_Offset: {x: 0.005783081, y: 13.760624}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1534,7 +1534,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.74368, y: 1.2448378}
+  m_Size: {x: 28.79606, y: 0.53665257}
   m_EdgeRadius: 0
 --- !u!114 &1115724023
 MonoBehaviour:
@@ -1770,7 +1770,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157659976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3227,7 +3227,7 @@ GameObject:
   - component: {fileID: 1929960142}
   m_Layer: 0
   m_Name: FireParticles
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
