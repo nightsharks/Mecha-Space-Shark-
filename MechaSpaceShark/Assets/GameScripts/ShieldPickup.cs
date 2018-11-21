@@ -7,7 +7,7 @@ public class ShieldPickup : MonoBehaviour {
     public GameObject player;
     public GameObject currentObject;
     public static bool PickedUpShield;
-    int distanceToDespawn = 400;
+    int distanceToDespawn = 900;
 
     void Start()
     {      

@@ -19,7 +19,7 @@ public class RepeatingBackground : MonoBehaviour
 
     private void Update()
     {
-        if (playerTransform.position.x > transform.position.x + groundHorizontalLength / 2 ) // length of the backdrop < player position
+        if (playerTransform.position.x > transform.position.x + groundHorizontalLength / 2 + 1000 ) // idk why 1000 works it just does
         {
             RepositionBackground();
             Debug.Log("test");
