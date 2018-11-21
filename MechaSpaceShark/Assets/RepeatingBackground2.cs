@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RepeatingBackground : MonoBehaviour
+public class RepeatingBackground2 : MonoBehaviour
 {
+
     private BoxCollider2D groundCollider;
-    public bool playerIsHere;
-    private float groundHorizontalLength;      
+    private float groundHorizontalLength;
+    public static bool isPlayerHere;
 
     [SerializeField]
 
@@ -18,20 +19,24 @@ public class RepeatingBackground : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
+
     private void Update()
     {
-        if (playerTransform.position.x > transform.position.x + groundHorizontalLength / 2 ) // length of the backdrop < player position
+        if (transform.position.x + groundHorizontalLength / 2 < playerTransform.position.x)
         {
+
             RepositionBackground();
             Debug.Log("test");
         }
     }
 
-    
+
     private void RepositionBackground()
     {
-            Vector2 groundOffSet = new Vector2(groundHorizontalLength * 2f, 0);
 
-            transform.position = (Vector2)transform.position + groundOffSet;       
+        Vector2 groundOffSet = new Vector2(groundHorizontalLength * 2f, 0);
+
+
+        transform.position = (Vector2)transform.position + groundOffSet;
     }
 }
