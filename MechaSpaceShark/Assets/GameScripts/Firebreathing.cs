@@ -28,24 +28,16 @@ public class Firebreathing : MonoBehaviour {
 
     public void BreatheFire()
     {
-        //if (Fire.isStopped)
-        //{
-            Fire.Play();
+        Fire.Play();
         var em = Fire.emission;
         em.enabled = true;
         Debug.Log("firebreathing");
-       // }
     }
 
     public void StopFire()
-    {
-     //   if(Fire.isPlaying)
-       // {
-            
+    {          
             Fire.Stop();
             var em = Fire.emission;
             em.enabled = false;
-
-       // }
     }
 }
