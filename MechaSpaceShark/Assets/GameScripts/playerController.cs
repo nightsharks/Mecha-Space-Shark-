@@ -85,7 +85,7 @@ public class playerController : MonoBehaviour {
         {
             invincibility = sprite.GetComponent<SpriteRenderer>();
             invincibility.color = Color.yellow;
-            Debug.Log("default");
+           //Debug.Log("default");
         }
     }
 
@@ -93,6 +93,6 @@ public class playerController : MonoBehaviour {
     {
         invincibility = sprite.GetComponent<SpriteRenderer>();
         invincibility.color = Color.white;
-        Debug.Log("cyan");
+       // Debug.Log("cyan");
     }
 }

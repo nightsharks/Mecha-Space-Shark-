@@ -43,7 +43,7 @@ public class Obstacle : MonoBehaviour
         {
             CollideWithAsteroid = false;      
         }
-        else if (collisionHappened.collider.tag == "Player")
+        else
         {
             CollideWithAsteroid = true;
         }
