@@ -27,4 +27,9 @@ public class onClick : MonoBehaviour {
         Obstacle.CollideWithAsteroid = false;
         Time.timeScale = 1f;
     }
+
+    public void showCredits()
+    {
+
+    }
 }
