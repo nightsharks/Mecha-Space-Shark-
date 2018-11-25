@@ -52,7 +52,7 @@ public class AudioPlayer : MonoBehaviour {
                 crystalPlaySource.PlayOneShot(crystalPickup[6]);
             }
 
-            else if (score == 8)
+            else if (score == 8 && Firebreathing.hasBreathed == false)
             {
                 crystalPlaySource.PlayOneShot(crystalPickup[7]);
                 score = 0;

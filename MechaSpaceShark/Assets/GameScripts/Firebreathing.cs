@@ -9,6 +9,7 @@ public class Firebreathing : MonoBehaviour {
     public Transform FireSpawn;
     public static bool canBreathe;
     public static bool hasBreathed;
+    private IEnumerator coroutine;
 
     private void Start()
     {
@@ -22,12 +23,6 @@ public class Firebreathing : MonoBehaviour {
         {
             BreatheFire();
         }
-
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            StopFire();
-
-        }
     }
 
     public void BreatheFire()
@@ -38,6 +33,8 @@ public class Firebreathing : MonoBehaviour {
             var em = Fire.emission;
             em.enabled = true;
             hasBreathed = true;
+            coroutine = fireTimer();
+            StartCoroutine(coroutine);
         }
 
         Debug.Log("firebreathing");
@@ -50,5 +47,12 @@ public class Firebreathing : MonoBehaviour {
         em.enabled = false;
         canBreathe = false;
         hasBreathed = false;
+    }
+
+
+    IEnumerator fireTimer()
+    {
+        yield return new WaitForSeconds(1f);
+        StopFire();
     }
 }
