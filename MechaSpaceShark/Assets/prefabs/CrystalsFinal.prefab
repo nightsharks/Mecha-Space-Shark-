@@ -308,6 +308,7 @@ MonoBehaviour:
   currentObject: {fileID: 1131130307476006}
   distanceFromPlayer: 0
   playerPositionX: 0
+  audioClip: {fileID: 0}
 --- !u!212 &212227644299456936
 SpriteRenderer:
   m_ObjectHideFlags: 1

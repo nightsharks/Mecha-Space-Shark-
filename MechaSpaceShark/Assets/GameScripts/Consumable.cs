@@ -7,12 +7,12 @@ public class Consumable : MonoBehaviour
 {
     public GameObject player;
     public GameObject currentObject;
-
     public float distanceFromPlayer;
     public float playerPositionX;
     public static bool CollideWithFood = false;
     public static bool isObjectBehind = false;
     private int distanceToDespawn = 900;
+
 
     public void Start()
     {
@@ -43,7 +43,7 @@ public class Consumable : MonoBehaviour
         {
             currentObject.SetActive(false);
             CollideWithFood = true;
-        }
+        }       
     }
 
 

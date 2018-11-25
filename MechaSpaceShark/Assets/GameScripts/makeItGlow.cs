@@ -8,6 +8,7 @@ public class makeItGlow : MonoBehaviour {
     public Image sprite;
     public Color spriteColor;
     public Color originalColor;
+
     private void Start()
     {
         originalColor = sprite.color;
