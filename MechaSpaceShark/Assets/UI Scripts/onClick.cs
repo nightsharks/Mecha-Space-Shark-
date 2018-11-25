@@ -30,6 +30,6 @@ public class onClick : MonoBehaviour {
 
     public void showCredits()
     {
-
+        SceneManager.LoadScene(sceneBuildIndex: 2);
     }
 }
