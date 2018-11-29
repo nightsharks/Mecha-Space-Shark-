@@ -10,6 +10,7 @@ public class Firebreathing : MonoBehaviour {
     public static bool canBreathe;
     public static bool hasBreathed;
     private IEnumerator coroutine;
+    public AudioSource firePlaySource;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Firebreathing : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             BreatheFire();
+            
         }
     }
 
@@ -30,6 +32,7 @@ public class Firebreathing : MonoBehaviour {
         if (canBreathe)
         {
             Fire.Play();
+            firePlaySource.Play();
             var em = Fire.emission;
             em.enabled = true;
             hasBreathed = true;
