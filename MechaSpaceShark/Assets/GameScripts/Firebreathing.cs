@@ -35,8 +35,8 @@ public class Firebreathing : MonoBehaviour {
             hasBreathed = true;
             coroutine = fireTimer();
             StartCoroutine(coroutine);
-        }
 
+        }
         Debug.Log("firebreathing");
     }
 
@@ -46,7 +46,6 @@ public class Firebreathing : MonoBehaviour {
         var em = Fire.emission;
         em.enabled = false;
         canBreathe = false;
-        hasBreathed = false;
     }
 
 
@@ -54,5 +53,6 @@ public class Firebreathing : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         StopFire();
+        hasBreathed = false;
     }
 }

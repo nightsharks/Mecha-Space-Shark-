@@ -9,11 +9,13 @@ public class ShieldPickup : MonoBehaviour {
     public static bool PickedUpShield;
     int distanceToDespawn = 900;
 
+    public AudioSource shieldPickupPlaySource;
+
     void Start()
     {      
         PickedUpShield = false;
         player = GameObject.FindWithTag("Player");
-        Debug.Log("started");
+        shieldPickupPlaySource = player.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -29,9 +31,15 @@ public class ShieldPickup : MonoBehaviour {
         if (collision.CompareTag("Player"))
         {
             PickedUpShield = true;          
-            Debug.Log("picked up");
             currentObject.SetActive(false);
-            Debug.Log("coro started");
+            playInvincibilityNoise();
+
         }
+    }
+
+
+    void playInvincibilityNoise()
+    {
+        shieldPickupPlaySource.Play();
     }
 }
