@@ -26,14 +26,16 @@ public class FireProgress : MonoBehaviour {
             Debug.Log("filled");
         }
 
-        if(progress.fillAmount == 1)
+        if(progress.fillAmount > .95)
         {
             Firebreathing.canBreathe = true;
+            enoughFuel = true;
         }     
         if(Firebreathing.hasBreathed)
         {
             progress.fillAmount = 0;
             startsAt = 0f;
+            enoughFuel = false;
         }
     }
 }

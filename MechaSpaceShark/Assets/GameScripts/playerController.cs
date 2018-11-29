@@ -22,6 +22,9 @@ public class playerController : MonoBehaviour {
     SpriteRenderer invincibility;
     Color invincibilityColor;
 
+    public List<AudioClip> crystalPickup;
+    public AudioSource crystalPlaySource;
+
     void OnEnable()
     {
         scoreCount = 0;
