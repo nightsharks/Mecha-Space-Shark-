@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     public GameObject player;
     public GameObject currentObject;
 
-    public int distanceToDespawn = 900;
+    public int distanceToDespawn = 400;
     public static bool CollideWithAsteroid = false;
 
     public void Start()

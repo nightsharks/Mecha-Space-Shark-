@@ -22,10 +22,13 @@ public class playerController : MonoBehaviour {
     SpriteRenderer invincibility;
     Color invincibilityColor;
 
+    public GameObject pauseUI;
+
     void OnEnable()
     {
         scoreCount = 0;
-        scoreText();      
+        scoreText();
+        pauseUI.SetActive(false);
     }
 
      void Start()

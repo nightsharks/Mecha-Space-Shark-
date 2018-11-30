@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class onClick : MonoBehaviour {
 
-	public void exitGame () {
+    public void exitGame () {
         Application.Quit();
 	}
 	
@@ -28,8 +29,5 @@ public class onClick : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    public void showCredits()
-    {
-        SceneManager.LoadScene(sceneBuildIndex: 2);
-    }
+
 }

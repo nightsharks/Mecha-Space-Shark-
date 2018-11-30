@@ -16,11 +16,19 @@ public class EndMenu : MonoBehaviour
 
     public ScoreManager scoreboard;
 
+    public AudioClip gameOverMusic;
+    public AudioSource gameOverSource;
+    public static bool gameIsOver;
+    public bool hasMusicPlayed;
+
     public void Start()
     {
         scoreboard = FindObjectOfType<ScoreManager>();
         EndMenuUI.SetActive(false);
-        
+        gameIsOver = false;
+        hasMusicPlayed = false;
+
+
     }
 
     void Update()
@@ -28,6 +36,7 @@ public class EndMenu : MonoBehaviour
 
         if (Obstacle.CollideWithAsteroid)
         {
+            
             EndMenuUI.SetActive(true);
             Time.timeScale = 0f;
            
@@ -41,7 +50,21 @@ public class EndMenu : MonoBehaviour
             HighDistance.text = "Farthest Distance: " + scoreboard.GetHighestPlayerDistance().ToString();
          
             InGameUI.SetActive(false);
+
+            gameIsOver = true;
+
+            if(hasMusicPlayed == false)
+            {
+                playMusic();
+            }
         }
 
+    }
+
+    void playMusic()
+    {
+        gameOverSource.volume = .6f;
+        gameOverSource.PlayOneShot(gameOverMusic);
+        hasMusicPlayed = true;
     }
 }

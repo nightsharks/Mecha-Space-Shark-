@@ -26,24 +26,25 @@ public class AsteroidPooler : MonoBehaviour {
         pooledObjectsAsteroid = new List<GameObject>();
         for (int i = 0; i < amountToPool; i++)
         {
-            int random = Random.Range(0, 3);
-            if(random == 1)
+            int random = Random.Range(0, 4);
+            if(random == 0 || random == 1)
             {
-                GameObject obj3 = (GameObject)Instantiate(objectToPool3);
-                obj3.SetActive(false);
-                pooledObjectsAsteroid.Add(obj3);
+                GameObject obj1 = (GameObject)Instantiate(objectToPool);
+                obj1.SetActive(false);
+                pooledObjectsAsteroid.Add(obj1);
             }
+
             else if (random == 2)
             {
                 GameObject obj2 = (GameObject)Instantiate(objectToPool2);
                 obj2.SetActive(false);
                 pooledObjectsAsteroid.Add(obj2);
             }
-            else //if (random == 3)
+            else if (random == 3)
             {
-                GameObject obj1 = (GameObject)Instantiate(objectToPool);
-                obj1.SetActive(false);
-                pooledObjectsAsteroid.Add(obj1);               
+                GameObject obj3 = (GameObject)Instantiate(objectToPool3);
+                obj3.SetActive(false);
+                pooledObjectsAsteroid.Add(obj3);               
             }           
         }
     }

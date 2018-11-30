@@ -7,10 +7,10 @@ public class ShieldPickup : MonoBehaviour {
     public GameObject player;
     public GameObject currentObject;
     public static bool PickedUpShield;
-    int distanceToDespawn = 900;
+    int distanceToDespawn = 1000;
 
     public AudioSource shieldPickupPlaySource;
-
+    public AudioClip shieldClip;
     void Start()
     {      
         PickedUpShield = false;
@@ -40,6 +40,7 @@ public class ShieldPickup : MonoBehaviour {
 
     void playInvincibilityNoise()
     {
-        shieldPickupPlaySource.Play();
+        shieldPickupPlaySource.volume = .3f;
+        shieldPickupPlaySource.PlayOneShot(shieldClip);
     }
 }

@@ -7,7 +7,7 @@ public class InvincibilitySpawner : MonoBehaviour {
     public GameObject player;
 
     private int random1 = 0;
-    private int random2 = 300;
+    private int random2 = 360;
     int num1, num2;
 
     public static InvincibilitySpawner SharedInstance;
